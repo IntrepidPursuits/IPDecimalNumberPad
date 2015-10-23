@@ -1,40 +1,20 @@
-#
-# Be sure to run `pod lib lint IPDecimalNumberPad.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
   s.name             = "IPDecimalNumberPad"
   s.version          = "0.1.0"
-  s.summary          = "A short description of IPDecimalNumberPad."
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!  
+  s.summary          = "A number pad control consisting of digits 0-9, a decimal point and a delete button."
   s.description      = <<-DESC
+Sometimes a design requires a number pad that is not contained in a keyboard. This UIControl subclass provides a customizeable and resizeable number pad. 
                        DESC
-
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/IPDecimalNumberPad"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+  s.homepage         = "https://github.com/IntrepidPursuits/IPDecimalNumberPad"
   s.license          = 'MIT'
   s.author           = { "Nick Servidio" => "servidionicholas@gmail.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/IPDecimalNumberPad.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
-  s.platform     = :ios, '7.0'
+  s.source           = { :git => "https://github.com/IntrepidPursuits/IPDecimalNumberPad.git", :tag => "0.1.0" }
+  s.platform     = :ios, '8.0'
   s.requires_arc = true
-
   s.source_files = 'Pod/Classes/**/*'
   s.resource_bundles = {
     'IPDecimalNumberPad' => ['Pod/Assets/*.png']
   }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.frameworks = 'UIKit'
+  s.dependency 'IP-UIKit-Wisdom', '0.0.4'
 end

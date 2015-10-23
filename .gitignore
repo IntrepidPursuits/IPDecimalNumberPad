@@ -31,3 +31,65 @@ Carthage
 # `pod install` in .travis.yml
 #
 # Pods/
+Example/IPDecimalNumberPad.xcworkspace/contents.xcworkspacedata
+Example/Pods/Manifest.lock
+Example/Pods/Headers/Private/IP-UIKit-Wisdom/UIColor+IPRandomColor.h
+Example/Pods/Headers/Private/IP-UIKit-Wisdom/UIImage+ColorMaskedImage.h
+Example/Pods/Headers/Private/IP-UIKit-Wisdom/UIView+Constraints.h
+Example/Pods/Headers/Private/IP-UIKit-Wisdom/UIView+IPAncestry.h
+Example/Pods/Headers/Private/IP-UIKit-Wisdom/UIView+IPFrameUtils.h
+Example/Pods/Headers/Private/IP-UIKit-Wisdom/UIView+NibInitable.h
+Example/Pods/Headers/Private/IP-UIKit-Wisdom/UIViewController+Containment.h
+Example/Pods/Headers/Private/IPDecimalNumberPad/IPDecimalNumberPad.h
+Example/Pods/IP-UIKit-Wisdom/LICENSE
+Example/Pods/IP-UIKit-Wisdom/src/UIColor/UIColor+IPRandomColor.h
+Example/Pods/IP-UIKit-Wisdom/src/UIColor/UIColor+IPRandomColor.m
+Example/Pods/IP-UIKit-Wisdom/src/UIImage/UIImage+ColorMaskedImage.h
+Example/Pods/IP-UIKit-Wisdom/src/UIImage/UIImage+ColorMaskedImage.m
+Example/Pods/IP-UIKit-Wisdom/src/UIView/UIView+Constraints.h
+Example/Pods/IP-UIKit-Wisdom/src/UIView/UIView+Constraints.m
+Example/Pods/IP-UIKit-Wisdom/src/UIView/UIView+IPAncestry.h
+Example/Pods/IP-UIKit-Wisdom/src/UIView/UIView+IPAncestry.m
+Example/Pods/IP-UIKit-Wisdom/src/UIView/UIView+IPFrameUtils.h
+Example/Pods/IP-UIKit-Wisdom/src/UIView/UIView+IPFrameUtils.m
+Example/Pods/IP-UIKit-Wisdom/src/UIView/UIView+NibInitable.h
+Example/Pods/IP-UIKit-Wisdom/src/UIView/UIView+NibInitable.m
+Example/Pods/IP-UIKit-Wisdom/src/UIViewController/UIViewController+Containment.h
+Example/Pods/IP-UIKit-Wisdom/src/UIViewController/UIViewController+Containment.m
+Example/Pods/Local Podspecs/IPDecimalNumberPad.podspec.json
+Example/Pods/Pods.xcodeproj/project.pbxproj
+Example/Pods/Pods.xcodeproj/xcshareddata/xcschemes/IPDecimalNumberPad.xcscheme
+Example/Pods/Target Support Files/IP-UIKit-Wisdom/Info.plist
+Example/Pods/Target Support Files/IP-UIKit-Wisdom/IP-UIKit-Wisdom-dummy.m
+Example/Pods/Target Support Files/IP-UIKit-Wisdom/IP-UIKit-Wisdom-prefix.pch
+Example/Pods/Target Support Files/IP-UIKit-Wisdom/IP-UIKit-Wisdom-Private.xcconfig
+Example/Pods/Target Support Files/IP-UIKit-Wisdom/IP-UIKit-Wisdom-umbrella.h
+Example/Pods/Target Support Files/IP-UIKit-Wisdom/IP-UIKit-Wisdom.modulemap
+Example/Pods/Target Support Files/IP-UIKit-Wisdom/IP-UIKit-Wisdom.xcconfig
+Example/Pods/Target Support Files/IPDecimalNumberPad/Info.plist
+Example/Pods/Target Support Files/IPDecimalNumberPad/IPDecimalNumberPad-dummy.m
+Example/Pods/Target Support Files/IPDecimalNumberPad/IPDecimalNumberPad-prefix.pch
+Example/Pods/Target Support Files/IPDecimalNumberPad/IPDecimalNumberPad-Private.xcconfig
+Example/Pods/Target Support Files/IPDecimalNumberPad/IPDecimalNumberPad-umbrella.h
+Example/Pods/Target Support Files/IPDecimalNumberPad/IPDecimalNumberPad.modulemap
+Example/Pods/Target Support Files/IPDecimalNumberPad/IPDecimalNumberPad.xcconfig
+Example/Pods/Target Support Files/Pods-IPDecimalNumberPad_Example/Info.plist
+Example/Pods/Target Support Files/Pods-IPDecimalNumberPad_Example/Pods-IPDecimalNumberPad_Example-acknowledgements.markdown
+Example/Pods/Target Support Files/Pods-IPDecimalNumberPad_Example/Pods-IPDecimalNumberPad_Example-acknowledgements.plist
+Example/Pods/Target Support Files/Pods-IPDecimalNumberPad_Example/Pods-IPDecimalNumberPad_Example-dummy.m
+Example/Pods/Target Support Files/Pods-IPDecimalNumberPad_Example/Pods-IPDecimalNumberPad_Example-frameworks.sh
+Example/Pods/Target Support Files/Pods-IPDecimalNumberPad_Example/Pods-IPDecimalNumberPad_Example-resources.sh
+Example/Pods/Target Support Files/Pods-IPDecimalNumberPad_Example/Pods-IPDecimalNumberPad_Example-umbrella.h
+Example/Pods/Target Support Files/Pods-IPDecimalNumberPad_Example/Pods-IPDecimalNumberPad_Example.debug.xcconfig
+Example/Pods/Target Support Files/Pods-IPDecimalNumberPad_Example/Pods-IPDecimalNumberPad_Example.modulemap
+Example/Pods/Target Support Files/Pods-IPDecimalNumberPad_Example/Pods-IPDecimalNumberPad_Example.release.xcconfig
+Example/Pods/Target Support Files/Pods-IPDecimalNumberPad_Tests/Info.plist
+Example/Pods/Target Support Files/Pods-IPDecimalNumberPad_Tests/Pods-IPDecimalNumberPad_Tests-acknowledgements.markdown
+Example/Pods/Target Support Files/Pods-IPDecimalNumberPad_Tests/Pods-IPDecimalNumberPad_Tests-acknowledgements.plist
+Example/Pods/Target Support Files/Pods-IPDecimalNumberPad_Tests/Pods-IPDecimalNumberPad_Tests-dummy.m
+Example/Pods/Target Support Files/Pods-IPDecimalNumberPad_Tests/Pods-IPDecimalNumberPad_Tests-frameworks.sh
+Example/Pods/Target Support Files/Pods-IPDecimalNumberPad_Tests/Pods-IPDecimalNumberPad_Tests-resources.sh
+Example/Pods/Target Support Files/Pods-IPDecimalNumberPad_Tests/Pods-IPDecimalNumberPad_Tests-umbrella.h
+Example/Pods/Target Support Files/Pods-IPDecimalNumberPad_Tests/Pods-IPDecimalNumberPad_Tests.debug.xcconfig
+Example/Pods/Target Support Files/Pods-IPDecimalNumberPad_Tests/Pods-IPDecimalNumberPad_Tests.modulemap
+Example/Pods/Target Support Files/Pods-IPDecimalNumberPad_Tests/Pods-IPDecimalNumberPad_Tests.release.xcconfig

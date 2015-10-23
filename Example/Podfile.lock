@@ -1,0 +1,17 @@
+PODS:
+  - IP-UIKit-Wisdom (0.0.4)
+  - IPDecimalNumberPad (0.1.0):
+    - IP-UIKit-Wisdom (= 0.0.4)
+
+DEPENDENCIES:
+  - IPDecimalNumberPad (from `../`)
+
+EXTERNAL SOURCES:
+  IPDecimalNumberPad:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  IP-UIKit-Wisdom: f98d65fb0cabd67562656bab310323a6ac5ae57a
+  IPDecimalNumberPad: 35df9a1d6ed18d0b3de3d0e99e223723438782e9
+
+COCOAPODS: 0.38.2
