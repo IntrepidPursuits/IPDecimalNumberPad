@@ -16,8 +16,6 @@
 		49EA0B911BDEE28E0027C650 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49EA0B8D1BDEE28E0027C650 /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
 		49EA0B921BDEE28E0027C650 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EA0B8E1BDEE28E0027C650 /* main.m */; settings = {ASSET_TAGS = (); }; };
 		49EA0B931BDEE28E0027C650 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49EA0B8F1BDEE28E0027C650 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
-		49EA0B991BDEE34C0027C650 /* SanFranciscoDisplay-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 49EA0B961BDEE34C0027C650 /* SanFranciscoDisplay-Light.otf */; settings = {ASSET_TAGS = (); }; };
-		49EA0B9A1BDEE34C0027C650 /* SanFranciscoText-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 49EA0B971BDEE34C0027C650 /* SanFranciscoText-Light.otf */; settings = {ASSET_TAGS = (); }; };
 		49EA0B9B1BDEE34C0027C650 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49EA0B981BDEE34C0027C650 /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -349,9 +347,7 @@
 			files = (
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 				49EA0B9B1BDEE34C0027C650 /* Images.xcassets in Resources */,
-				49EA0B991BDEE34C0027C650 /* SanFranciscoDisplay-Light.otf in Resources */,
 				49EA0B901BDEE28E0027C650 /* IPDecimalNumberPad-Info.plist in Resources */,
-				49EA0B9A1BDEE34C0027C650 /* SanFranciscoText-Light.otf in Resources */,
 				49EA0B931BDEE28E0027C650 /* Main.storyboard in Resources */,
 				49EA0B911BDEE28E0027C650 /* LaunchScreen.storyboard in Resources */,
 				49EA0B851BDEE1E40027C650 /* InfoPlist.strings in Resources */,

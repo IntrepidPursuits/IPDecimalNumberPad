@@ -12,6 +12,7 @@
 
 @interface IPViewController () <IPDecimalNumberPadDelegate>
 
+@property (weak, nonatomic) IBOutlet UILabel *instructionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *numberLabel;
 @property (weak, nonatomic) IBOutlet IPDecimalNumberPad *numberPad;
 @property (strong, nonatomic) CAGradientLayer *backgroundLayer;
@@ -25,7 +26,6 @@
     [self setupBackgroundGradient];
     [self setupLabel];
     self.numberPad.delegate = self;
-    self.numberLabel.text = @"$";
 }
 
 - (void)viewDidLayoutSubviews {
@@ -42,20 +42,31 @@
 
 - (void)setupLabel {
     self.numberLabel.font = [UIFont systemFontOfSize:64.0];
+    self.numberLabel.textColor = [UIColor whiteColor];
+    self.numberLabel.text = @"$";
+    self.instructionLabel.font = [UIFont systemFontOfSize:18.0];
+    self.instructionLabel.textColor = [UIColor whiteColor];
+    self.instructionLabel.text = @"Enter payment amount:";
 }
 
 #pragma mark - IPDecimalNumberPadDelegate
 
 - (void)decimalNumberPadDidPressDeleteButton:(IPDecimalNumberPad *)decimalNumberPad {
-    [self removeCharacterFromNumberLabel];
+    if ([self shouldRemoveCharacterFromNumberLabel]) {
+        [self removeCharacterFromNumberLabel];
+    }
 }
 
 - (void)decimalNumberPadDidPressDecimalPointButton:(IPDecimalNumberPad *)decimalNumberPad {
-    [self addCharacterToNumberLabel:@"."];
+    if ([self shouldAddCharacterToNumberLabel:@"."]) {
+        [self addCharacterToNumberLabel:@"."];
+    }
 }
 
 - (void)decimalNumberPad:(IPDecimalNumberPad *)decimalNumberPad didSelectValue:(NSUInteger)value {
-    [self addCharacterToNumberLabel:[NSString stringWithFormat:@"%ld", value]];
+    if ([self shouldAddCharacterToNumberLabel:[NSString stringWithFormat:@"%ld", value]]) {
+        [self addCharacterToNumberLabel:[NSString stringWithFormat:@"%ld", value]];
+    }
 }
 
 #pragma mark - Text Handling
@@ -72,6 +83,36 @@
     NSMutableString *mutableNumberText = [self.numberLabel.text mutableCopy];
     [mutableNumberText appendString:character];
     self.numberLabel.text = [mutableNumberText copy];
+}
+
+#pragma mark - Helpers
+
+- (BOOL)shouldAddCharacterToNumberLabel:(NSString *)character {
+    NSString *currentText = self.numberLabel.text;
+    if ([self characterWouldBeSecondDecimalPoint:character forCurrentText:currentText] ||
+        [self characterWouldBeAnotherZeroAtFront:character forCurrentText:currentText] ||
+        [self characterWouldMakeMoreThanTwoDecimalPlaces:character forCurrentText:currentText]) {
+        return NO;
+    }
+    return YES;
+}
+
+- (BOOL)shouldRemoveCharacterFromNumberLabel {
+    return self.numberLabel.text.length > 1;
+}
+
+- (BOOL)characterWouldBeSecondDecimalPoint:(NSString *)character forCurrentText:(NSString *)currentText {
+    return [character isEqualToString:@"."] && [currentText containsString:@"."];
+}
+
+- (BOOL)characterWouldBeAnotherZeroAtFront:(NSString *)character forCurrentText:(NSString *)currentText {
+    return (currentText.length < 3) && [character isEqualToString:@"0"] && [currentText containsString:@"0"];
+}
+
+- (BOOL)characterWouldMakeMoreThanTwoDecimalPlaces:(NSString *)character forCurrentText:(NSString *)currentText {
+    NSArray *amountArray = [currentText componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"."]];
+    NSString *decimal = amountArray.count > 1 ? [amountArray lastObject] : nil;
+    return decimal.length > 1;
 }
 
 @end
