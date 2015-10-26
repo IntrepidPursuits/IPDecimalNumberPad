@@ -9,7 +9,6 @@
 #import "IPViewController.h"
 #import "IPDecimalNumberPad.h"
 #import "CAGradientLayer+IPGradients.h"
-#import "UIFont+IPStyle.h"
 
 @interface IPViewController () <IPDecimalNumberPadDelegate>
 
@@ -26,7 +25,7 @@
     [self setupBackgroundGradient];
     [self setupLabel];
     self.numberPad.delegate = self;
-    self.numberLabel.text = @"";
+    self.numberLabel.text = @"$";
 }
 
 - (void)viewDidLayoutSubviews {
@@ -42,7 +41,7 @@
 }
 
 - (void)setupLabel {
-    self.numberLabel.font = [UIFont ipLightDisplayFontWithSize:64.0];
+    self.numberLabel.font = [UIFont systemFontOfSize:64.0];
 }
 
 #pragma mark - IPDecimalNumberPadDelegate

@@ -19,7 +19,6 @@
 		49EA0B991BDEE34C0027C650 /* SanFranciscoDisplay-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 49EA0B961BDEE34C0027C650 /* SanFranciscoDisplay-Light.otf */; settings = {ASSET_TAGS = (); }; };
 		49EA0B9A1BDEE34C0027C650 /* SanFranciscoText-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 49EA0B971BDEE34C0027C650 /* SanFranciscoText-Light.otf */; settings = {ASSET_TAGS = (); }; };
 		49EA0B9B1BDEE34C0027C650 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49EA0B981BDEE34C0027C650 /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
-		49EA0B9E1BDEE3DE0027C650 /* UIFont+IPStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EA0B9D1BDEE3DE0027C650 /* UIFont+IPStyle.m */; settings = {ASSET_TAGS = (); }; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -62,8 +61,6 @@
 		49EA0B961BDEE34C0027C650 /* SanFranciscoDisplay-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoDisplay-Light.otf"; sourceTree = "<group>"; };
 		49EA0B971BDEE34C0027C650 /* SanFranciscoText-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoText-Light.otf"; sourceTree = "<group>"; };
 		49EA0B981BDEE34C0027C650 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		49EA0B9C1BDEE3DE0027C650 /* UIFont+IPStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+IPStyle.h"; sourceTree = "<group>"; };
-		49EA0B9D1BDEE3DE0027C650 /* UIFont+IPStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+IPStyle.m"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* IPDecimalNumberPad_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IPDecimalNumberPad_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -127,8 +124,6 @@
 				49EA0B6F1BDEE1E40027C650 /* CAGradientLayer+IPGradients.m */,
 				49EA0B701BDEE1E40027C650 /* UIColor+IPStyle.h */,
 				49EA0B711BDEE1E40027C650 /* UIColor+IPStyle.m */,
-				49EA0B9C1BDEE3DE0027C650 /* UIFont+IPStyle.h */,
-				49EA0B9D1BDEE3DE0027C650 /* UIFont+IPStyle.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -472,7 +467,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				49EA0B921BDEE28E0027C650 /* main.m in Sources */,
-				49EA0B9E1BDEE3DE0027C650 /* UIFont+IPStyle.m in Sources */,
 				49EA0B831BDEE1E40027C650 /* UIColor+IPStyle.m in Sources */,
 				49EA0B841BDEE1E40027C650 /* IPViewController.m in Sources */,
 				49EA0B821BDEE1E40027C650 /* CAGradientLayer+IPGradients.m in Sources */,

@@ -8,6 +8,7 @@
 
 #import "IPDecimalNumberPad.h"
 #import "UIView+Constraints.h"
+#import "IPDecimalNumberPadButton.h"
 
 NSUInteger const kAmountOfColumnDividers = 2;
 NSUInteger const kAmountOfRowDividers = 4;
@@ -54,8 +55,8 @@ NS_ENUM(NSInteger, MOBButtonTag) {
 }
 
 - (void)commonInit {
-    self.buttonClass = [UIButton class];
     self.backgroundColor = [UIColor clearColor];
+    _buttonClass = [IPDecimalNumberPadButton class];
     _columnDividerImage = [self imageFromAssetBundleNamed:@"verticalLine"];
     _rowDividerImage = [self imageFromAssetBundleNamed:@"horizontalLine"];
     _deleteButtonImage = [self imageFromAssetBundleNamed:@"backspace"];

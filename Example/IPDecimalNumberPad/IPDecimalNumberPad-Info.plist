@@ -38,10 +38,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>UIAppFonts</key>
-	<array>
-		<string>SanFranciscoDisplay-Light.otf</string>
-		<string>SanFranciscoText-Light.otf</string>
-	</array>
 </dict>
 </plist>
