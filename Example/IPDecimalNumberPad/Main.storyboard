@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="whP-gf-Uak">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="whP-gf-Uak">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -14,14 +16,44 @@
                         <viewControllerLayoutGuide type="bottom" id="Mvr-aV-6Um"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="TpU-gO-2f1">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ew-Sf-b5h">
+                                <rect key="frame" x="20" y="33.5" width="560" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rRc-IM-lrF" customClass="IPDecimalNumberPad">
+                                <rect key="frame" x="20" y="70" width="560" height="560"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="rRc-IM-lrF" secondAttribute="height" multiplier="1:1" id="pN9-XE-V1v"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="rRc-IM-lrF" secondAttribute="leading" id="4xh-YO-YTP"/>
+                            <constraint firstItem="rRc-IM-lrF" firstAttribute="centerY" secondItem="TpU-gO-2f1" secondAttribute="centerY" id="8dx-2A-GOc"/>
+                            <constraint firstItem="9ew-Sf-b5h" firstAttribute="trailing" secondItem="rRc-IM-lrF" secondAttribute="trailing" id="P5A-O0-H8x"/>
+                            <constraint firstItem="rRc-IM-lrF" firstAttribute="top" secondItem="9ew-Sf-b5h" secondAttribute="bottom" constant="16" id="U4y-6h-hcU"/>
+                            <constraint firstItem="9ew-Sf-b5h" firstAttribute="centerX" secondItem="rRc-IM-lrF" secondAttribute="centerX" id="WPo-1w-vNx"/>
+                            <constraint firstItem="9ew-Sf-b5h" firstAttribute="leading" secondItem="rRc-IM-lrF" secondAttribute="leading" id="b0u-aS-QYD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rRc-IM-lrF" secondAttribute="trailing" id="fQK-Za-73L"/>
+                        </constraints>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="700"/>
+                    <connections>
+                        <outlet property="numberLabel" destination="9ew-Sf-b5h" id="am1-hZ-z2q"/>
+                        <outlet property="numberPad" destination="rRc-IM-lrF" id="dg1-cn-fxZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="433"/>
+            <point key="canvasLocation" x="248" y="333"/>
         </scene>
     </scenes>
 </document>
