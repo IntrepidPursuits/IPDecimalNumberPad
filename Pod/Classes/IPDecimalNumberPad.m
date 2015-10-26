@@ -56,9 +56,9 @@ NS_ENUM(NSInteger, MOBButtonTag) {
 - (void)commonInit {
     self.buttonClass = [UIButton class];
     self.backgroundColor = [UIColor clearColor];
-    self.columnDividerImage = [self imageFromAssetBundleNamed:@"verticalLine"];
-    self.rowDividerImage = [self imageFromAssetBundleNamed:@"horizontalLine"];
-    self.deleteButtonImage = [self imageFromAssetBundleNamed:@"backspace"];
+    _columnDividerImage = [self imageFromAssetBundleNamed:@"verticalLine"];
+    _rowDividerImage = [self imageFromAssetBundleNamed:@"horizontalLine"];
+    _deleteButtonImage = [self imageFromAssetBundleNamed:@"backspace"];
     [self setupGeometryWithButtons:[self allButtons] columnDividers:[self columnDividers] rowDividers:[self rowDividers]];
 }
 
@@ -224,7 +224,7 @@ NS_ENUM(NSInteger, MOBButtonTag) {
     button2.tag = MOBButtonTagZero;
 
     UIButton *button3 = [[self.buttonClass alloc] init];
-    [button3 setImage:[UIImage new] forState:UIControlStateNormal];
+    [button3 setImage:self.deleteButtonImage forState:UIControlStateNormal];
     button3.tag = MOBButtonTagDelete;
     self.deleteButton = button3;
 

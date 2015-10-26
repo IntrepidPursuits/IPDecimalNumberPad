@@ -8,11 +8,14 @@
 
 #import "IPViewController.h"
 #import "IPDecimalNumberPad.h"
+#import "CAGradientLayer+IPGradients.h"
+#import "UIFont+IPStyle.h"
 
 @interface IPViewController () <IPDecimalNumberPadDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *numberLabel;
 @property (weak, nonatomic) IBOutlet IPDecimalNumberPad *numberPad;
+@property (strong, nonatomic) CAGradientLayer *backgroundLayer;
 
 @end
 
@@ -20,9 +23,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupBackgroundGradient];
+    [self setupLabel];
     self.numberPad.delegate = self;
     self.numberLabel.text = @"";
 }
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    self.backgroundLayer.frame = self.view.bounds;
+}
+
+#pragma mark - Setups
+
+- (void)setupBackgroundGradient {
+    self.backgroundLayer = [CAGradientLayer greenGradientLayer];
+    [self.view.layer insertSublayer:self.backgroundLayer atIndex:0];
+}
+
+- (void)setupLabel {
+    self.numberLabel.font = [UIFont ipLightDisplayFontWithSize:64.0];
+}
+
+#pragma mark - IPDecimalNumberPadDelegate
 
 - (void)decimalNumberPadDidPressDeleteButton:(IPDecimalNumberPad *)decimalNumberPad {
     [self removeCharacterFromNumberLabel];
@@ -35,6 +58,8 @@
 - (void)decimalNumberPad:(IPDecimalNumberPad *)decimalNumberPad didSelectValue:(NSUInteger)value {
     [self addCharacterToNumberLabel:[NSString stringWithFormat:@"%ld", value]];
 }
+
+#pragma mark - Text Handling
 
 - (void)removeCharacterFromNumberLabel {
     NSString *numberText = self.numberLabel.text;
