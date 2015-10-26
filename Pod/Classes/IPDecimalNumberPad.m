@@ -56,6 +56,9 @@ NS_ENUM(NSInteger, MOBButtonTag) {
 - (void)commonInit {
     self.buttonClass = [UIButton class];
     self.backgroundColor = [UIColor clearColor];
+    self.columnDividerImage = [self imageFromAssetBundleNamed:@"verticalLine"];
+    self.rowDividerImage = [self imageFromAssetBundleNamed:@"horizontalLine"];
+    self.deleteButtonImage = [self imageFromAssetBundleNamed:@"backspace"];
     [self setupGeometryWithButtons:[self allButtons] columnDividers:[self columnDividers] rowDividers:[self rowDividers]];
 }
 
@@ -265,6 +268,14 @@ NS_ENUM(NSInteger, MOBButtonTag) {
     } else {
        [self.delegate decimalNumberPad:self didSelectValue:(NSUInteger)sender.tag];
     }
+}
+
+#pragma mark - Resources
+
+- (UIImage *)imageFromAssetBundleNamed:(NSString *)imageName {
+    NSString *bundlePath = [[NSBundle bundleForClass:[self class]] pathForResource:@"IPDecimalNumberPadAssets" ofType:@"bundle"];
+    NSBundle *assetBundle = [NSBundle bundleWithPath:bundlePath];
+    return [UIImage imageNamed:imageName inBundle:assetBundle compatibleWithTraitCollection:nil];
 }
 
 @end
