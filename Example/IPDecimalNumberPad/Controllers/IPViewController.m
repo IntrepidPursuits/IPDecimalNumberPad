@@ -26,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupBackgroundGradient];
-    [self setupLabel];
+    [self setupLabels];
     self.numberPad.delegate = self;
     self.currentAmount = [[IPStringBackedDecimalValue alloc] init];
 }
@@ -43,7 +43,7 @@
     [self.view.layer insertSublayer:self.backgroundLayer atIndex:0];
 }
 
-- (void)setupLabel {
+- (void)setupLabels {
     self.numberLabel.font = [UIFont systemFontOfSize:64.0];
     self.numberLabel.textColor = [UIColor whiteColor];
     self.numberLabel.text = @"$";
