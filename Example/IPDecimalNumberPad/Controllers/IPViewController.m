@@ -90,8 +90,9 @@
 - (BOOL)shouldAddCharacterToNumberLabel:(NSString *)character {
     NSString *currentText = self.numberLabel.text;
     if ([self characterWouldBeSecondDecimalPoint:character forCurrentText:currentText] ||
-        [self characterWouldBeAnotherZeroAtFront:character forCurrentText:currentText] ||
-        [self characterWouldMakeMoreThanTwoDecimalPlaces:character forCurrentText:currentText]) {
+        [self characterWouldCauseALeadingZeroAtFrontOfWholeNumber:character forCurrentText:currentText] ||
+        [self characterWouldMakeMoreThanTwoDecimalPlaces:character forCurrentText:currentText] ||
+        [self characterWouldAddFifthWholeNumberDigit:character toCurrentText:currentText]) {
         return NO;
     }
     return YES;
@@ -105,14 +106,18 @@
     return [character isEqualToString:@"."] && [currentText containsString:@"."];
 }
 
-- (BOOL)characterWouldBeAnotherZeroAtFront:(NSString *)character forCurrentText:(NSString *)currentText {
-    return (currentText.length < 3) && [character isEqualToString:@"0"] && [currentText containsString:@"0"];
+- (BOOL)characterWouldCauseALeadingZeroAtFrontOfWholeNumber:(NSString *)character forCurrentText:(NSString *)currentText {
+    return (currentText.length < 3) && ![character isEqualToString:@"."] && [currentText containsString:@"0"];
 }
 
 - (BOOL)characterWouldMakeMoreThanTwoDecimalPlaces:(NSString *)character forCurrentText:(NSString *)currentText {
     NSArray *amountArray = [currentText componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"."]];
     NSString *decimal = amountArray.count > 1 ? [amountArray lastObject] : nil;
     return decimal.length > 1;
+}
+
+- (BOOL)characterWouldAddFifthWholeNumberDigit:(NSString *)character toCurrentText:(NSString *)currentText {
+    return (currentText.length > 4) && ![currentText containsString:@"."] && ![character isEqualToString:@"."];
 }
 
 @end
