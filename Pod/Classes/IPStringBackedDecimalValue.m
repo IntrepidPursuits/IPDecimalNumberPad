@@ -30,10 +30,6 @@ NSUInteger const kIPDefaultMaxNumberOfDecimalDigits = 2;
     return self;
 }
 
-- (NSString *)currentValueFormattedAsPrice {
-    return [NSNumberFormatter valueFormattedAsPriceWithNoSymbol:[self.currentValue floatValue]];
-}
-
 - (void)addDigitToCurrentValue:(NSUInteger)digit {
     if ([self canAddDigitToCurrentValue:digit]) {
         [self.currentValue appendString:[NSString stringWithFormat:@"%ld", digit]];
@@ -58,7 +54,7 @@ NSUInteger const kIPDefaultMaxNumberOfDecimalDigits = 2;
 #pragma mark - Helpers
 
 - (BOOL)canAddDigitToCurrentValue:(NSUInteger)digit {
-    return ([self isTryingToAddDigitToWholeNumber] && [self canAddDigitToWholeNumber]) || ([self isTryingToAddDigitToDecimalNumber] && [self canAddDigitToDecimalNumber]);
+    return (![self currentValueContainsDecimalPoint] && [self canAddDigitToWholeNumber]) || ([self currentValueContainsDecimalPoint] && [self canAddDigitToDecimalNumber]);
 }
 
 - (BOOL)canAddDecimalPointToCurrentValue {
@@ -69,16 +65,8 @@ NSUInteger const kIPDefaultMaxNumberOfDecimalDigits = 2;
     return self.currentValue.length > 0;
 }
 
-- (BOOL)isTryingToAddDigitToWholeNumber {
-    return ![self currentValueContainsDecimalPoint];
-}
-
 - (BOOL)canAddDigitToWholeNumber {
     return  [self amountOfWholeNumberDigits] + 1 <= self.maxNumberOfWholeNumberDigits && ![self firstDigitIsZero];
-}
-
-- (BOOL)isTryingToAddDigitToDecimalNumber {
-    return [self currentValueContainsDecimalPoint];
 }
 
 - (BOOL)canAddDigitToDecimalNumber {

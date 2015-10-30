@@ -1,65 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="whP-gf-Uak">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ia7-fA-cP3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="wQg-tq-qST">
+        <!--Decimal Number Pad Controller-->
+        <scene sceneID="nuc-vh-q4d">
             <objects>
-                <viewController id="whP-gf-Uak" customClass="IPViewController" sceneMemberID="viewController">
+                <viewController id="ia7-fA-cP3" customClass="IPDecimalNumberPadController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="uEw-UM-LJ8"/>
-                        <viewControllerLayoutGuide type="bottom" id="Mvr-aV-6Um"/>
+                        <viewControllerLayoutGuide type="top" id="cQD-f1-7uc"/>
+                        <viewControllerLayoutGuide type="bottom" id="KoI-UE-aZd"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="TpU-gO-2f1">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
+                    <view key="view" contentMode="scaleToFill" id="Qgs-ON-4Fm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instruction Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCc-um-BQg">
-                                <rect key="frame" x="237" y="68" width="127" height="20"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ew-Sf-b5h">
-                                <rect key="frame" x="0.0" y="112" width="600" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rRc-IM-lrF" customClass="IPDecimalNumberPad">
-                                <rect key="frame" x="28" y="173" width="544" height="544"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="rRc-IM-lrF" secondAttribute="height" multiplier="1:1" id="pN9-XE-V1v"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <constraints>
-                            <constraint firstAttribute="leadingMargin" secondItem="rRc-IM-lrF" secondAttribute="leading" constant="-8" id="4xh-YO-YTP"/>
-                            <constraint firstItem="Mvr-aV-6Um" firstAttribute="top" secondItem="rRc-IM-lrF" secondAttribute="bottom" constant="83" id="AWh-sL-by9"/>
-                            <constraint firstItem="9ew-Sf-b5h" firstAttribute="top" secondItem="tCc-um-BQg" secondAttribute="bottom" constant="24" id="DVx-N5-f0H"/>
-                            <constraint firstItem="rRc-IM-lrF" firstAttribute="top" secondItem="9ew-Sf-b5h" secondAttribute="bottom" constant="40" id="U4y-6h-hcU"/>
-                            <constraint firstItem="tCc-um-BQg" firstAttribute="centerX" secondItem="9ew-Sf-b5h" secondAttribute="centerX" id="VTL-aE-6SM"/>
-                            <constraint firstItem="9ew-Sf-b5h" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leadingMargin" constant="-20" id="cbs-hF-oGM"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="rRc-IM-lrF" secondAttribute="trailing" constant="8" id="fQK-Za-73L"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="9ew-Sf-b5h" secondAttribute="trailing" constant="-20" id="srq-PF-guo"/>
-                        </constraints>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="800"/>
-                    <connections>
-                        <outlet property="instructionLabel" destination="tCc-um-BQg" id="YSZ-X1-4D3"/>
-                        <outlet property="numberLabel" destination="9ew-Sf-b5h" id="am1-hZ-z2q"/>
-                        <outlet property="numberPad" destination="rRc-IM-lrF" id="dg1-cn-fxZ"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gxF-fi-F6N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="248" y="333"/>
+            <point key="canvasLocation" x="457" y="92"/>
         </scene>
     </scenes>
 </document>

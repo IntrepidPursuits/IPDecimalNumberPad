@@ -14,8 +14,6 @@
 @property (nonatomic) NSUInteger maxNumberOfWholeNumberDigits;
 @property (nonatomic) NSUInteger maxNumberOfDecimalDigits;
 
-- (NSString *)currentValueFormattedAsPrice;
-
 - (void)addDigitToCurrentValue:(NSUInteger)digit;
 - (void)addDecimalPointToCurrentValue;
 - (void)removeDigitFromCurrentValue;

@@ -14,5 +14,5 @@ Sometimes a design requires a number pad that is not contained in a keyboard. Th
   s.source_files = 'Pod/Classes/**/*'
   s.resources = 'Pod/Assets/IPDecimalNumberPadAssets.bundle'
   s.frameworks = 'UIKit'
-  s.dependency 'IP-UIKit-Wisdom', '0.0.4'
+  s.dependency 'IP-UIKit-Wisdom', '0.0.6'
 end
