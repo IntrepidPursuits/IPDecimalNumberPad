@@ -12,7 +12,6 @@
 #import "UIView+Constraints.h"
 #import "CAGradientLayer+IPGradients.h"
 #import "UIColor+IPStyle.h"
-#import "NSNumberFormatter+IPCurrencySansSymbol.h"
 
 CGFloat const kIPNumberPadBottomConstraintConstant = -83.0;
 CGFloat const kIPNumberPadLeftConstraintConstant = 36.0;
@@ -104,10 +103,6 @@ CGFloat const kIPAmountLabelToConstraintConstant = -24.0;
 
 - (CAGradientLayer *)greenGradientLayer {
     return [CAGradientLayer gradentLayerWithTopColor:[UIColor ipShamrock] bottomColor:[UIColor ipGreenish]];
-}
-
-- (NSString *)currentValueFormattedAsPrice {
-    return [NSNumberFormatter valueFormattedAsPriceWithNoSymbol:[self.currentAmount.currentValue floatValue]];
 }
 
 @end

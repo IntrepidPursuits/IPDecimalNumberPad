@@ -7,7 +7,6 @@
 //
 
 #import "IPStringBackedDecimalValue.h"
-#import "NSNumberFormatter+IPCurrencySansSymbol.h"
 
 NSUInteger const kIPDefaultMaxNumberOfWholeNumberDigits = 3;
 NSUInteger const kIPDefaultMaxNumberOfDecimalDigits = 2;
