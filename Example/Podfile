@@ -7,6 +7,5 @@ end
 
 target 'IPDecimalNumberPad_Tests', :exclusive => true do
   pod "IPDecimalNumberPad", :path => "../"
-
   
 end

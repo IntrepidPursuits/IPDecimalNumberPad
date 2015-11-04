@@ -7,20 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4912ED051BDFAE71004DF14E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4912ED021BDFAE71004DF14E /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
+		4912ED061BDFAE71004DF14E /* IPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4912ED041BDFAE71004DF14E /* IPAppDelegate.m */; settings = {ASSET_TAGS = (); }; };
+		49EA0B911BDEE28E0027C650 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49EA0B8D1BDEE28E0027C650 /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
+		49EA0B921BDEE28E0027C650 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EA0B8E1BDEE28E0027C650 /* main.m */; settings = {ASSET_TAGS = (); }; };
+		49EA0B931BDEE28E0027C650 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49EA0B8F1BDEE28E0027C650 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
-		6003F598195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
-		6003F59A195388D20070C39A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
-		6003F59E195388D20070C39A /* IPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* IPAppDelegate.m */; };
-		6003F5A7195388D20070C39A /* IPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5A6195388D20070C39A /* IPViewController.m */; };
-		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F5AF195388D20070C39A /* XCTest.framework */; };
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
-		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		9526D812C3036781D519BAAC /* Pods_IPDecimalNumberPad_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A7577990C6162D672928F99 /* Pods_IPDecimalNumberPad_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A79503C8838FCBD25B2BE630 /* Pods_IPDecimalNumberPad_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 746888715DA48BA91C847326 /* Pods_IPDecimalNumberPad_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
@@ -37,19 +36,20 @@
 
 /* Begin PBXFileReference section */
 		0316B6047CA038770B77F7D2 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		4912ED021BDFAE71004DF14E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4912ED031BDFAE71004DF14E /* IPAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPAppDelegate.h; sourceTree = "<group>"; };
+		4912ED041BDFAE71004DF14E /* IPAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPAppDelegate.m; sourceTree = "<group>"; };
+		49EA0B771BDEE1E40027C650 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
+		49EA0B8B1BDEE28E0027C650 /* IPDecimalNumberPad-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "IPDecimalNumberPad-Info.plist"; sourceTree = "<group>"; };
+		49EA0B8C1BDEE28E0027C650 /* IPDecimalNumberPad-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IPDecimalNumberPad-Prefix.pch"; sourceTree = "<group>"; };
+		49EA0B8D1BDEE28E0027C650 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		49EA0B8E1BDEE28E0027C650 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		49EA0B8F1BDEE28E0027C650 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* IPDecimalNumberPad_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IPDecimalNumberPad_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6003F591195388D20070C39A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		6003F595195388D20070C39A /* IPDecimalNumberPad-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IPDecimalNumberPad-Info.plist"; sourceTree = "<group>"; };
 		6003F597195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		6003F599195388D20070C39A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6003F59B195388D20070C39A /* IPDecimalNumberPad-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IPDecimalNumberPad-Prefix.pch"; sourceTree = "<group>"; };
-		6003F59C195388D20070C39A /* IPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IPAppDelegate.h; sourceTree = "<group>"; };
-		6003F59D195388D20070C39A /* IPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IPAppDelegate.m; sourceTree = "<group>"; };
-		6003F5A5195388D20070C39A /* IPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IPViewController.h; sourceTree = "<group>"; };
-		6003F5A6195388D20070C39A /* IPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IPViewController.m; sourceTree = "<group>"; };
-		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6003F5AE195388D20070C39A /* IPDecimalNumberPad_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IPDecimalNumberPad_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6003F5B7195388D20070C39A /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
@@ -58,7 +58,6 @@
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		746888715DA48BA91C847326 /* Pods_IPDecimalNumberPad_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IPDecimalNumberPad_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F7F11136F144AC6775A52FD /* Pods-IPDecimalNumberPad_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IPDecimalNumberPad_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IPDecimalNumberPad_Tests/Pods-IPDecimalNumberPad_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9A7577990C6162D672928F99 /* Pods_IPDecimalNumberPad_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IPDecimalNumberPad_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1545532E0609E436313CF85 /* Pods-IPDecimalNumberPad_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IPDecimalNumberPad_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-IPDecimalNumberPad_Example/Pods-IPDecimalNumberPad_Example.release.xcconfig"; sourceTree = "<group>"; };
 		C36547F8E34DE51FBDCD096B /* IPDecimalNumberPad.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = IPDecimalNumberPad.podspec; path = ../IPDecimalNumberPad.podspec; sourceTree = "<group>"; };
@@ -93,6 +92,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49EA0B751BDEE1E40027C650 /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				49EA0B761BDEE1E40027C650 /* InfoPlist.strings */,
+			);
+			path = en.lproj;
+			sourceTree = "<group>";
+		};
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
@@ -130,12 +137,15 @@
 		6003F593195388D20070C39A /* Example for IPDecimalNumberPad */ = {
 			isa = PBXGroup;
 			children = (
-				6003F59C195388D20070C39A /* IPAppDelegate.h */,
-				6003F59D195388D20070C39A /* IPAppDelegate.m */,
-				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
-				6003F5A5195388D20070C39A /* IPViewController.h */,
-				6003F5A6195388D20070C39A /* IPViewController.m */,
-				6003F5A8195388D20070C39A /* Images.xcassets */,
+				49EA0B751BDEE1E40027C650 /* en.lproj */,
+				4912ED021BDFAE71004DF14E /* Images.xcassets */,
+				4912ED031BDFAE71004DF14E /* IPAppDelegate.h */,
+				4912ED041BDFAE71004DF14E /* IPAppDelegate.m */,
+				49EA0B8B1BDEE28E0027C650 /* IPDecimalNumberPad-Info.plist */,
+				49EA0B8C1BDEE28E0027C650 /* IPDecimalNumberPad-Prefix.pch */,
+				49EA0B8D1BDEE28E0027C650 /* LaunchScreen.storyboard */,
+				49EA0B8E1BDEE28E0027C650 /* main.m */,
+				49EA0B8F1BDEE28E0027C650 /* Main.storyboard */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
 			name = "Example for IPDecimalNumberPad";
@@ -145,10 +155,7 @@
 		6003F594195388D20070C39A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6003F595195388D20070C39A /* IPDecimalNumberPad-Info.plist */,
 				6003F596195388D20070C39A /* InfoPlist.strings */,
-				6003F599195388D20070C39A /* main.m */,
-				6003F59B195388D20070C39A /* IPDecimalNumberPad-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -276,9 +283,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
-				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
-				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
+				49EA0B931BDEE28E0027C650 /* Main.storyboard in Resources */,
+				4912ED051BDFAE71004DF14E /* Images.xcassets in Resources */,
+				49EA0B911BDEE28E0027C650 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,9 +397,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6003F59E195388D20070C39A /* IPAppDelegate.m in Sources */,
-				6003F5A7195388D20070C39A /* IPViewController.m in Sources */,
-				6003F59A195388D20070C39A /* main.m in Sources */,
+				49EA0B921BDEE28E0027C650 /* main.m in Sources */,
+				4912ED061BDFAE71004DF14E /* IPAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +421,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		49EA0B761BDEE1E40027C650 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49EA0B771BDEE1E40027C650 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		6003F596195388D20070C39A /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -515,9 +529,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IPDecimalNumberPad/IPDecimalNumberPad-Prefix.pch";
 				INFOPLIST_FILE = "IPDecimalNumberPad/IPDecimalNumberPad-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -531,9 +546,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IPDecimalNumberPad/IPDecimalNumberPad-Prefix.pch";
 				INFOPLIST_FILE = "IPDecimalNumberPad/IPDecimalNumberPad-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
