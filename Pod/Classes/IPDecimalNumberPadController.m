@@ -13,12 +13,12 @@
 #import "CAGradientLayer+IPGradients.h"
 #import "UIColor+IPStyle.h"
 
-CGFloat const kIPNumberPadBottomConstraintConstant = -83.0;
-CGFloat const kIPNumberPadLeftConstraintConstant = 36.0;
-CGFloat const kIPNumberPadRightConstraintConstant = -36.0;
-CGFloat const kIPNumberPadTopConstraintConstant = -40.0;
+UIEdgeInsets const kIPDefaultNumberPadEdgeInsets = (UIEdgeInsets){40.0, 36.0, 83.0, 36.0};
+
 CGFloat const kIPNumberPadAspectRatio = 1.0;
-CGFloat const kIPAmountLabelToConstraintConstant = -24.0;
+
+NSUInteger kIPDefaultNumberOfWholeNumberDigits = 4;
+NSUInteger kIPDefaultNumberOfDecimalDigits = 2;
 
 @interface IPDecimalNumberPadController () <IPDecimalNumberPadDelegate>
 
@@ -30,10 +30,11 @@ CGFloat const kIPAmountLabelToConstraintConstant = -24.0;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupCurrentAmount];
     [self setupBackgroundGradient];
     [self setupNumberPad];
-    [self setupAmountAndInstructionsLabels];
-    self.currentAmount = [[IPStringBackedDecimalValue alloc] init];
+    [self setupAmountLabel];
+    [self setNumberPadEdgeInsets:kIPDefaultNumberPadEdgeInsets];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -41,7 +42,40 @@ CGFloat const kIPAmountLabelToConstraintConstant = -24.0;
     self.backgroundLayer.frame = self.view.bounds;
 }
 
+#pragma mark - Properties 
+
+- (void)setNumberPadEdgeInsets:(UIEdgeInsets)numberPadEdgeInsets {
+    _numberPadEdgeInsets = numberPadEdgeInsets;
+    [self configureNumberPadConstraintsForEdgeInsets:numberPadEdgeInsets];
+}
+
+- (void)setMaxNumberOfWholeNumberDigitsToDisplay:(NSUInteger)maxNumberOfWholeNumberDigitsToDisplay {
+    _maxNumberOfWholeNumberDigitsToDisplay = maxNumberOfWholeNumberDigitsToDisplay;
+    self.currentAmount.maxNumberOfWholeNumberDigits = _maxNumberOfWholeNumberDigitsToDisplay;
+}
+
+- (void)setMaxNumberOfDecimalDigitsToDisplay:(NSUInteger)maxNumberOfDecimalDigitsToDisplay {
+    _maxNumberOfDecimalDigitsToDisplay = maxNumberOfDecimalDigitsToDisplay;
+    self.currentAmount.maxNumberOfDecimalDigits = _maxNumberOfDecimalDigitsToDisplay;
+}
+
+- (void)configureNumberPadConstraintsForEdgeInsets:(UIEdgeInsets)edgeInsets {
+    [self.view removeConstraints:self.view.constraints];
+    [self.view constrainViewToBottom:self.numberPad withInset:-edgeInsets.bottom];
+    [self.view constrainViewToLeft:self.numberPad withInset:edgeInsets.left];
+    [self.view constrainViewToRight:self.numberPad withInset:-edgeInsets.right];
+    [self.view constrainView:self.numberPad toAspectRatio:kIPNumberPadAspectRatio];
+    [self.view constrainViewToHorizontalEdges:self.amountLabel];
+    [self.view constrainView:self.amountLabel aboveView:self.numberPad withOffset:-edgeInsets.top];
+}
+
 #pragma mark - Setups
+
+- (void)setupCurrentAmount {
+    self.currentAmount = [[IPStringBackedDecimalValue alloc] init];
+    self.maxNumberOfWholeNumberDigitsToDisplay = kIPDefaultNumberOfWholeNumberDigits;
+    self.maxNumberOfDecimalDigitsToDisplay = kIPDefaultNumberOfDecimalDigits;
+}
 
 - (void)setupBackgroundGradient {
     self.backgroundLayer = [self greenGradientLayer];
@@ -52,30 +86,15 @@ CGFloat const kIPAmountLabelToConstraintConstant = -24.0;
     self.numberPad = [[IPDecimalNumberPad alloc] init];
     self.numberPad.delegate = self;
     [self.view addSubview:self.numberPad];
-    [self.view constrainViewToBottom:self.numberPad withInset:kIPNumberPadBottomConstraintConstant];
-    [self.view constrainViewToLeft:self.numberPad withInset:kIPNumberPadLeftConstraintConstant];
-    [self.view constrainViewToRight:self.numberPad withInset:kIPNumberPadRightConstraintConstant];
-    [self.view constrainView:self.numberPad toAspectRatio:kIPNumberPadAspectRatio];
 }
 
-- (void)setupAmountAndInstructionsLabels {
+- (void)setupAmountLabel {
     self.amountLabel = [[UILabel alloc] init];
     self.amountLabel.font = [UIFont systemFontOfSize:64.0];
     self.amountLabel.textColor = [UIColor whiteColor];
     self.amountLabel.text = @"$";
     self.amountLabel.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:self.amountLabel];
-    [self.view constrainViewToHorizontalEdges:self.amountLabel];
-    [self.view constrainView:self.amountLabel aboveView:self.numberPad withOffset:kIPNumberPadTopConstraintConstant];
-
-    self.instructionsLabel = [[UILabel alloc] init];
-    self.instructionsLabel.font = [UIFont systemFontOfSize:18.0];
-    self.instructionsLabel.textColor = [UIColor whiteColor];
-    self.instructionsLabel.text = @"Enter payment amount:";
-    self.instructionsLabel.textAlignment = NSTextAlignmentCenter;
-    [self.view addSubview:self.instructionsLabel];
-    [self.view constrainViewToHorizontalEdges:self.instructionsLabel];
-    [self.view constrainView:self.instructionsLabel aboveView:self.amountLabel withOffset:kIPAmountLabelToConstraintConstant];
 }
 
 #pragma mark - IPDecimalNumberPadDelegate
