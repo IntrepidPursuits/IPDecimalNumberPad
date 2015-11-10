@@ -23,6 +23,10 @@ NSUInteger kIPDefaultNumberOfDecimalDigits = 2;
 @interface IPDecimalNumberPadController () <IPDecimalNumberPadDelegate>
 
 @property (strong, nonatomic) IPStringBackedDecimalValue *currentAmount;
+@property (strong, nonatomic) NSLayoutConstraint *numberPadTopConstraint;
+@property (strong, nonatomic) NSLayoutConstraint *numberPadLeftConstraint;
+@property (strong, nonatomic) NSLayoutConstraint *numberPadBottomConstraint;
+@property (strong, nonatomic) NSLayoutConstraint *numberPadRightConstraint;
 
 @end
 
@@ -32,8 +36,8 @@ NSUInteger kIPDefaultNumberOfDecimalDigits = 2;
     [super viewDidLoad];
     [self setupCurrentAmount];
     [self setupBackgroundGradient];
-    [self setupNumberPad];
     [self setupAmountLabel];
+    [self setupNumberPad];
     [self setNumberPadEdgeInsets:kIPDefaultNumberPadEdgeInsets];
 }
 
@@ -60,13 +64,10 @@ NSUInteger kIPDefaultNumberOfDecimalDigits = 2;
 }
 
 - (void)configureNumberPadConstraintsForEdgeInsets:(UIEdgeInsets)edgeInsets {
-    [self.view removeConstraints:self.view.constraints];
-    [self.view constrainViewToBottom:self.numberPad withInset:-edgeInsets.bottom];
-    [self.view constrainViewToLeft:self.numberPad withInset:edgeInsets.left];
-    [self.view constrainViewToRight:self.numberPad withInset:-edgeInsets.right];
-    [self.view constrainView:self.numberPad toAspectRatio:kIPNumberPadAspectRatio];
-    [self.view constrainViewToHorizontalEdges:self.amountLabel];
-    [self.view constrainView:self.amountLabel aboveView:self.numberPad withOffset:-edgeInsets.top];
+    self.numberPadTopConstraint.constant = -edgeInsets.top;
+    self.numberPadLeftConstraint.constant = edgeInsets.left;
+    self.numberPadBottomConstraint.constant = -edgeInsets.bottom;
+    self.numberPadRightConstraint.constant = -edgeInsets.right;
 }
 
 #pragma mark - Setups
@@ -82,12 +83,6 @@ NSUInteger kIPDefaultNumberOfDecimalDigits = 2;
     [self.view.layer insertSublayer:self.backgroundLayer atIndex:0];
 }
 
-- (void)setupNumberPad {
-    self.numberPad = [[IPDecimalNumberPad alloc] init];
-    self.numberPad.delegate = self;
-    [self.view addSubview:self.numberPad];
-}
-
 - (void)setupAmountLabel {
     self.amountLabel = [[UILabel alloc] init];
     self.amountLabel.font = [UIFont systemFontOfSize:64.0];
@@ -95,6 +90,23 @@ NSUInteger kIPDefaultNumberOfDecimalDigits = 2;
     self.amountLabel.text = @"$";
     self.amountLabel.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:self.amountLabel];
+    [self.view constrainViewToHorizontalEdges:self.amountLabel];
+}
+
+- (void)setupNumberPad {
+    self.numberPad = [[IPDecimalNumberPad alloc] init];
+    self.numberPad.delegate = self;
+    [self.view addSubview:self.numberPad];
+    [self setupNumberPadConstraints];
+    [self configureNumberPadConstraintsForEdgeInsets:kIPDefaultNumberPadEdgeInsets];
+}
+
+- (void)setupNumberPadConstraints {
+    self.numberPadTopConstraint = [self.view constrainView:self.amountLabel aboveView:self.numberPad];
+    self.numberPadLeftConstraint = [self.view constrainViewToLeft:self.numberPad];
+    self.numberPadBottomConstraint = [self.view constrainViewToBottom:self.numberPad];
+    self.numberPadRightConstraint = [self.view constrainViewToRight:self.numberPad];
+    [self.view constrainView:self.numberPad toAspectRatio:kIPNumberPadAspectRatio];
 }
 
 #pragma mark - IPDecimalNumberPadDelegate
