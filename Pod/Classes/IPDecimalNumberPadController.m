@@ -32,13 +32,36 @@ NSUInteger kIPDefaultNumberOfDecimalDigits = 2;
 
 @implementation IPDecimalNumberPadController
 
+#pragma mark - Initializers
+
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        [self commonInit];
+    }
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self commonInit];
+    }
+    return self;
+}
+
+- (void)commonInit {
+    _numberPadEdgeInsets = kIPDefaultNumberPadEdgeInsets;
+    [self setupCurrentAmount];
+}
+
+#pragma mark - View Controller Lifecycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupCurrentAmount];
     [self setupBackgroundGradient];
     [self setupAmountLabel];
     [self setupNumberPad];
-    [self setNumberPadEdgeInsets:kIPDefaultNumberPadEdgeInsets];
 }
 
 - (void)viewDidLayoutSubviews {
