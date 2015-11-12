@@ -20,8 +20,8 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
-		9526D812C3036781D519BAAC /* Pods_IPDecimalNumberPad_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A7577990C6162D672928F99 /* Pods_IPDecimalNumberPad_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		A79503C8838FCBD25B2BE630 /* Pods_IPDecimalNumberPad_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 746888715DA48BA91C847326 /* Pods_IPDecimalNumberPad_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		9526D812C3036781D519BAAC /* Pods_IPDecimalNumberPad_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A7577990C6162D672928F99 /* Pods_IPDecimalNumberPad_Example.framework */; };
+		A79503C8838FCBD25B2BE630 /* Pods_IPDecimalNumberPad_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 746888715DA48BA91C847326 /* Pods_IPDecimalNumberPad_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
