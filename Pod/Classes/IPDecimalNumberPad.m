@@ -274,7 +274,7 @@ NS_ENUM(NSInteger, MOBButtonTag) {
 #pragma mark - Resources
 
 - (UIImage *)imageFromAssetBundleNamed:(NSString *)imageName {
-    NSString *bundlePath = [[NSBundle bundleForClass:[self class]] pathForResource:@"IPDecimalNumberPadAssets" ofType:@"bundle"];
+    NSString *bundlePath = [[NSBundle bundleForClass:[self class]] pathForResource:@"IPDecimalNumberPad" ofType:@"bundle"];
     NSBundle *assetBundle = [NSBundle bundleWithPath:bundlePath];
     return [UIImage imageNamed:imageName inBundle:assetBundle compatibleWithTraitCollection:nil];
 }
