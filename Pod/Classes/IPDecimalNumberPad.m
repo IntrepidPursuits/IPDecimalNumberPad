@@ -9,6 +9,7 @@
 #import "IPDecimalNumberPad.h"
 #import "UIView+Constraints.h"
 #import "IPDecimalNumberPadButton.h"
+#import "UIImage+IPResizing.h"
 
 NSUInteger const kAmountOfColumnDividers = 2;
 NSUInteger const kAmountOfRowDividers = 4;
@@ -60,6 +61,8 @@ NS_ENUM(NSInteger, MOBButtonTag) {
     _columnDividerImage = [self imageFromAssetBundleNamed:@"verticalLine"];
     _rowDividerImage = [self imageFromAssetBundleNamed:@"horizontalLine"];
     _deleteButtonImage = [self imageFromAssetBundleNamed:@"backspace"];
+    _rowDividerInset = 0;
+    _columnDividerInset = 0;
     [self setupGeometryWithButtons:[self allButtons] columnDividers:[self columnDividers] rowDividers:[self rowDividers]];
 }
 
@@ -70,19 +73,29 @@ NS_ENUM(NSInteger, MOBButtonTag) {
     [self resetUI];
 }
 
-- (void)setColumnDividerImage:(UIImage *)columnDividerImage {
-    _columnDividerImage = columnDividerImage;
+- (void)setRowDividerImage:(UIImage *)rowDividerImage {
+    _rowDividerImage = [rowDividerImage horizontallyStretchableImage];
     [self resetUI];
 }
 
-- (void)setRowDividerImage:(UIImage *)rowDividerImage {
-    _rowDividerImage = rowDividerImage;
+- (void)setColumnDividerImage:(UIImage *)columnDividerImage {
+    _columnDividerImage = [columnDividerImage verticallyStretchableImage];
     [self resetUI];
 }
 
 - (void)setDeleteButtonImage:(UIImage *)deleteButtonImage {
     _deleteButtonImage = deleteButtonImage;
     [self.deleteButton setImage:deleteButtonImage forState:UIControlStateNormal];
+}
+
+- (void)setRowDividerInset:(CGFloat)rowDividerInset {
+    _rowDividerInset = rowDividerInset;
+    [self resetUI];
+}
+
+- (void)setColumnDividerInset:(CGFloat)columnDividerInset {
+    _columnDividerInset = columnDividerInset;
+    [self resetUI];
 }
 
 #pragma mark - Configuration
@@ -132,8 +145,8 @@ NS_ENUM(NSInteger, MOBButtonTag) {
 - (void)constrainCurrentButton:(UIButton *)currentButton toPreviousHorizontalButton:(UIButton *)previousHorizontalButton columnDivider:(UIView *)columnDivider {
     [self constrainView:previousHorizontalButton leftOfView:columnDivider];
     [self constrainView:columnDivider toWidth:self.columnDividerImage.size.width];
-    [self constrainViewToBottom:columnDivider];
-    [self constrainViewToTop:columnDivider];
+    [self constrainViewToBottom:columnDivider withInset:-self.columnDividerInset];
+    [self constrainViewToTop:columnDivider withInset:self.columnDividerInset];
     [self constrainView:currentButton rightOfView:columnDivider];
     [self constrainView:currentButton toTopOfView:previousHorizontalButton];
     [self constrainView:currentButton toWidthOfView:previousHorizontalButton];
@@ -143,7 +156,8 @@ NS_ENUM(NSInteger, MOBButtonTag) {
 - (void)constrainFirstButtonInRow:(UIButton *)firstButtonInRow toFirstButtonInPreviousRow:(UIButton *)firstButtonInPreviousRow rowDivider:(UIView *)rowDivider {
     [self constrainView:rowDivider belowView:firstButtonInPreviousRow];
     [self constrainView:rowDivider toHeight:self.rowDividerImage.size.height];
-    [self constrainViewToHorizontalEdges:rowDivider];
+    [self constrainViewToLeft:rowDivider withInset:self.rowDividerInset];
+    [self constrainViewToRight:rowDivider withInset:-self.rowDividerInset];
     [self constrainView:firstButtonInRow belowView:rowDivider];
     [self constrainView:firstButtonInRow toHeightOfView:firstButtonInPreviousRow];
 }
@@ -274,7 +288,7 @@ NS_ENUM(NSInteger, MOBButtonTag) {
 #pragma mark - Resources
 
 - (UIImage *)imageFromAssetBundleNamed:(NSString *)imageName {
-    NSString *bundlePath = [[NSBundle bundleForClass:[self class]] pathForResource:@"IPDecimalNumberPadAssets" ofType:@"bundle"];
+    NSString *bundlePath = [[NSBundle bundleForClass:[self class]] pathForResource:@"IPDecimalNumberPad" ofType:@"bundle"];
     NSBundle *assetBundle = [NSBundle bundleWithPath:bundlePath];
     return [UIImage imageNamed:imageName inBundle:assetBundle compatibleWithTraitCollection:nil];
 }
