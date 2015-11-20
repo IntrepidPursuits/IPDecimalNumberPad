@@ -31,7 +31,7 @@ NSUInteger const kIPDefaultMaxNumberOfDecimalDigits = 2;
 
 - (void)addDigitToCurrentValue:(NSUInteger)digit {
     if ([self canAddDigitToCurrentValue:digit]) {
-        [self.currentValue appendString:[NSString stringWithFormat:@"%ld", digit]];
+        [self.currentValue appendString:[NSString stringWithFormat:@"%lu", digit]];
     }
 }
 
