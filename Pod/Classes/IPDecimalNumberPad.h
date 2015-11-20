@@ -21,9 +21,13 @@
  *  This class will be used to instantiate the buttons for the number pad.
  */
 @property (nonatomic) Class buttonClass;
-@property (strong, nonatomic) UIImage *columnDividerImage;
+
 @property (strong, nonatomic) UIImage *rowDividerImage;
+@property (strong, nonatomic) UIImage *columnDividerImage;
 @property (strong, nonatomic) UIImage *deleteButtonImage;
+
+@property (nonatomic) CGFloat rowDividerInset;
+@property (nonatomic) CGFloat columnDividerInset;
 
 @end
 
