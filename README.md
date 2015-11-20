@@ -9,9 +9,9 @@
 
 ![Demo Gif](Screenshots/NumberPadExample.gif)
 
-Many apps require a user to enter in a decimal value with a number pad. Oftentimes this is accomplished with a keyboard. However, displaying a number pad within your UI can also provide a enjoyable user experience (see Square Cash and Venmo). One particularly common use case is the need for users to enter an amount of currency into an app. 
+Many apps require a user to enter in a decimal value with a number pad. Oftentimes this is accomplished with a keyboard. However, displaying a number pad within your UI can also provide an enjoyable user experience (see Square Cash and Venmo). One particularly common use case is the need for users to enter an amount of currency into an app. 
 
-The classes provided in this pod provide a quick way to introduce a number pad into your app. For those who want to get started immediately, use the `IPDecimalNumberPadController`. This class includes a number pad and an accompanying label that displays the value entered as US dollars. 
+The classes in this library provide a quick way to introduce a number pad into your app. For those who want to get started immediately, use the `IPDecimalNumberPadController`. This class includes a number pad and an accompanying label that displays the value entered as US dollars. 
 
 You can change the display of this class by hiding the `amountLabel` property and overriding the method:
 
