@@ -9,6 +9,7 @@
 #import "IPDecimalNumberPad.h"
 #import "UIView+Constraints.h"
 #import "IPDecimalNumberPadButton.h"
+#import "UIImage+IPResizing.h"
 
 NSUInteger const kAmountOfColumnDividers = 2;
 NSUInteger const kAmountOfRowDividers = 4;
@@ -73,12 +74,12 @@ NS_ENUM(NSInteger, MOBButtonTag) {
 }
 
 - (void)setRowDividerImage:(UIImage *)rowDividerImage {
-    _rowDividerImage = rowDividerImage;
+    _rowDividerImage = [rowDividerImage horizontallyStretchableImage];
     [self resetUI];
 }
 
 - (void)setColumnDividerImage:(UIImage *)columnDividerImage {
-    _columnDividerImage = columnDividerImage;
+    _columnDividerImage = [columnDividerImage verticallyStretchableImage];
     [self resetUI];
 }
 
