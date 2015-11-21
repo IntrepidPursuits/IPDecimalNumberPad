@@ -27,8 +27,6 @@ For those looking for complete customization, you can use the IPDecimalNumberPad
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
-
 ## Installation
 
 IPDecimalNumberPad is available through [CocoaPods](http://cocoapods.org). To install
